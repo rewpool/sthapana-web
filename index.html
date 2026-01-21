@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>สถาปนา ศทท.สส.ทหาร ปีที่ 36</title>
 
-  <!-- ✅ ฟอนต์ Sarabun จาก Google Fonts -->
+  <!--  ฟอนต์ Sarabun จาก Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -18,7 +18,7 @@
       color: #2b2b6e;
     }
 
-    /* ✅ ส่วนหัวโลโก้ + ข้อความ */
+    /*  ส่วนหัวโลโก้ + ข้อความ */
     .header {
       display: flex;
       justify-content: center;
@@ -40,7 +40,7 @@
       font-weight: 600;
     }
 
-    /* ✅ ใช้ Grid Layout ให้จัดครบ 4 ช่องแนวนอน */
+    /*  ใช้ Grid Layout ให้จัดครบ 4 ช่องแนวนอน */
     .container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -81,7 +81,7 @@
       font-weight: 500;
     }
 
-    /* ✅ Responsive สำหรับแท็บเล็ต */
+    /*  Responsive สำหรับแท็บเล็ต */
     @media (max-width: 1024px) {
       .container {
         grid-template-columns: repeat(2, 1fr);
@@ -91,7 +91,7 @@
       }
     }
 
-    /* ✅ Responsive สำหรับมือถือ */
+    /*  Responsive สำหรับมือถือ */
     @media (max-width: 600px) {
       .container {
         grid-template-columns: 1fr;
@@ -119,13 +119,13 @@
 </head>
 
 <body>
-  <!-- ✅ ส่วนหัว โลโก้ + ข้อความ -->
+  <!--  ส่วนหัว โลโก้ + ข้อความ -->
   <div class="header">
     <img src="images/logo.png" alt="โลโก้สถาปนา" />
     <h1>สถาปนา ศทท.สส.ทหาร ปีที่ 36</h1>
   </div>
 
-  <!-- ✅ เมนูบล็อก 4 ช่อง -->
+  <!--  เมนูบล็อก 4 ช่อง -->
   <div class="container">
     <div class="card" onclick="openLink('https://drive.google.com/drive/folders/1fd4OOw8U373ryF9sugXzIsiR7k_yHYaQ?usp=sharing')">
       <img src="images/old_commanders.png" alt="ภาพศูนย์โทรในอดีต" />
