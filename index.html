@@ -7,60 +7,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* 🔹 ตั้งค่าพื้นฐาน */
+    /* 🟣 พื้นฐานเว็บ */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      background-color: #f9f9fc;
       font-family: "Sarabun", "TH SarabunPSK", sans-serif;
-      background-color: #ffffff;
       color: #2b2b6e;
-      overflow-y: auto; /* ✅ scroll ได้ */
+      overflow-y: auto;
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* 🔹 ส่วนหัว */
+    /* 🟣 ส่วนหัว */
     .header {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-top: 10px;
+      margin-top: 15px;
       flex-wrap: wrap;
       text-align: center;
     }
 
     .header img {
-      width: 60px;
+      width: 55px;
       height: auto;
     }
 
     .header h1 {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
+      font-weight: 700;
       margin: 0;
+      color: #1a1a4b;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
     }
 
-    /* 🔹 ส่วนบอดี้การ์ด */
+    /* 🟣 โครงสร้าง Card ทั้งหมด */
     .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      display: grid;
+      grid-template-rows: repeat(4, calc((100vh - 22vh) / 4)); /* คำนวณพอดีจอ */
       width: 90vw;
-      height: 80vh; /* ✅ ให้พอดีกับจอแต่เผื่อโลโก้และหัวข้อ */
+      gap: 1vh;
       margin-top: 10px;
-      margin-bottom: 30px;
     }
 
-    /* 🔹 การ์ดแต่ละใบ */
+    /* 🟣 Card เดี่ยว */
     .card {
       position: relative;
-      width: 100%;
-      height: 18%; /* ✅ ขนาดเล็กลงให้ครบ 4 ใบ */
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -69,81 +67,72 @@
 
     .card:hover {
       transform: scale(1.02);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
     .card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(70%);
+      filter: brightness(70%) contrast(105%);
       transition: filter 0.3s ease;
     }
 
     .card:hover img {
-      filter: brightness(85%);
+      filter: brightness(85%) contrast(110%);
     }
 
-    /* 🔹 ข้อความบนภาพ */
+    /* 🟣 ข้อความบนภาพ */
     .card p {
       position: absolute;
-      bottom: 10%;
+      bottom: 12%;
       left: 50%;
       transform: translateX(-50%);
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
       margin: 0;
       text-align: center;
       width: 90%;
       line-height: 1.3;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 6px 10px;
+      border-radius: 8px;
+      backdrop-filter: blur(2px);
     }
 
-    /* 🔹 Responsive */
+    /* 🟣 Responsive สำหรับจอเล็ก */
     @media (max-width: 768px) {
-      .header img {
-        width: 45px;
-      }
-      .header h1 {
-        font-size: 1.3rem;
-      }
+      .header img { width: 45px; }
+      .header h1 { font-size: 1.3rem; }
       .container {
-        height: 85vh;
+        grid-template-rows: repeat(4, calc((100vh - 20vh) / 4));
+        width: 95vw;
       }
-      .card {
-        height: 19%;
-      }
-      .card p {
-        font-size: 0.9rem;
-      }
+      .card p { font-size: 1rem; }
     }
 
     @media (max-width: 480px) {
-      .header img {
-        width: 40px;
+      .header img { width: 40px; }
+      .header h1 { font-size: 1.1rem; }
+      .container {
+        grid-template-rows: repeat(4, calc((100vh - 18vh) / 4));
+        width: 95vw;
       }
-      .header h1 {
-        font-size: 1.1rem;
-      }
-      .card {
-        height: 20%;
-      }
-      .card p {
-        font-size: 0.85rem;
-      }
+      .card p { font-size: 0.95rem; }
     }
   </style>
 </head>
 
 <body>
-  <!-- 🔹 ส่วนหัว -->
+  <!-- 🟣 ส่วนหัว -->
   <div class="header">
     <img src="images/logo.png" alt="โลโก้สถาปนา" />
     <h1>สถาปนา ศทท.สส.ทหาร ปีที่ 36</h1>
   </div>
 
-  <!-- 🔹 การ์ดแนวตั้ง 4 ใบ -->
+  <!-- 🟣 การ์ด 4 ใบแนวตั้ง -->
   <div class="container">
 
     <div class="card" onclick="openLink('https://drive.google.com/drive/folders/1fd4OOw8U373ryF9sugXzIsiR7k_yHYaQ?usp=sharing')">
